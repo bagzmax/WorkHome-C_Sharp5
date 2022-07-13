@@ -11,7 +11,7 @@ int[] GetArrey(int size, int minValue, int maxValue)
 
     for (int i = 0; i < array.Length; i++)
     {
-        array[i] = new Random().Next(minValue, maxValue + 1);
+        array[i] = new Random().Next(minValue, maxValue);
     }
     return array;
 }
@@ -19,14 +19,18 @@ int[] GetArrey(int size, int minValue, int maxValue)
 void FindEvenNumbers(int[] numbers)
 {
     int count = 0;
+    
     for (int i = 0; i < numbers.Length; i++)
     {
-        if (numbers[i] / 2 * 2 == numbers[i])
+        //int res = numbers[i] & 1;
+        //if (res == 0)
+        //if (numbers[i] / 2 * 2 == numbers[i])
+        if (numbers[i] % 2 == 0)
         count ++;
     }
     Console.WriteLine("Четных чисел: " + count);
 }
 
-int[] array = GetArrey(4, 1, 1000);
+int[] array = GetArrey(4, 100, 1000);
 Console.Write($"[{string.Join(" ", array)}]\n");
 FindEvenNumbers(array);
