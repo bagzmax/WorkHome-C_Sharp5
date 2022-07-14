@@ -49,8 +49,6 @@ int size = int.Parse(Console.ReadLine()!);
 
 double[] array = GetArrey(size, -10, 20);
 Console.Write($"Заданный массив: [{string.Join(" ", array)}]\n");
-Console.WriteLine($"maxValue = {SearchMaxValue(array)}");
-Console.WriteLine($"minValue = {SearchMinValue(array)}");
 
 double deciesionMaxMinValue = Math.Round((SearchMaxValue(array)) - (SearchMinValue(array)), 1);
-Console.Write($"Разница между MaxValue и MinValue = {deciesionMaxMinValue}");
+Console.Write($"Разница между максимальным {SearchMaxValue(array)} и минимальным {SearchMinValue(array)} элементами = {deciesionMaxMinValue}");
