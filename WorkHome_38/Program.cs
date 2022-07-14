@@ -27,7 +27,6 @@ double SearchMaxValue(double[] massiv)
             maxValue = massiv[i];
         }
     }
-    Console.WriteLine($"maxValue = {maxValue}");
     return maxValue;
 }
 
@@ -42,7 +41,6 @@ double SearchMinValue(double[] massiv)
             minValue = massiv[i];
         }
     }
-    Console.WriteLine($"minValue = {minValue}");
     return minValue;
 }
 
@@ -51,6 +49,8 @@ int size = int.Parse(Console.ReadLine()!);
 
 double[] array = GetArrey(size, -10, 20);
 Console.Write($"Заданный массив: [{string.Join(" ", array)}]\n");
+Console.WriteLine($"maxValue = {SearchMaxValue(array)}");
+Console.WriteLine($"minValue = {SearchMinValue(array)}");
 
 double deciesionMaxMinValue = Math.Round((SearchMaxValue(array)) - (SearchMinValue(array)), 1);
 Console.Write($"Разница между MaxValue и MinValue = {deciesionMaxMinValue}");
