@@ -16,7 +16,7 @@ int[] GetArrey(int size, int minValue, int maxValue)
     return array;
 }
 
-void FindEvenNumbers(int[] numbers)
+int CountEvenNumbers(int[] numbers)
 {
     int count = 0;
     
@@ -28,9 +28,10 @@ void FindEvenNumbers(int[] numbers)
         if (numbers[i] % 2 == 0)
         count ++;
     }
-    Console.WriteLine("Четных чисел: " + count);
+    return count;
 }
 
 int[] array = GetArrey(4, 100, 1000);
 Console.Write($"[{string.Join(" ", array)}]\n");
-FindEvenNumbers(array);
+CountEvenNumbers(array);
+Console.WriteLine($"Чётных чисел: {CountEvenNumbers(array)}");
